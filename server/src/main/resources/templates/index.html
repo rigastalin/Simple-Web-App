@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Montserrat:wght@200;400&family=Raleway+Dots&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../../../../../styles.css">
+</head>
+<body>
+
+<button class="centered-button rounded-button" onclick="openModal()">Открыть модальное окно</button>
+
+<!-- Модальное окно -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Title form</h2>
+        <form action="/" method="post">
+            <div class="form-group">
+                <input type="text" id="firstName" name="firstName" placeholder=" " class="input-field required-field">
+                <label for="firstName" id="firstNameLabel" class="input-label">First Name *</label>
+                <div class="error-message" >Please fill in first name.</div>
+            </div>
+            <div class="form-group">
+                <input type="text" id="lastName" name="lastName" placeholder=" " class="input-field required-field">
+                <label for="lastName" id="lastNameLabel" class="input-label">Last Name *</label>
+                <div class="error-message">Please fill in last name.</div>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email" placeholder=" " class="input-field required-field">
+                <label for="email" id="emailLabel" class="input-label">user@gmail.com *</label>
+                <div class="error-message">Please fill in email.</div>
+                <div class="error-message-valid">Pleas enter a valid email address.</div>
+            </div>
+
+            <div class="form-group">
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <label for="product-type" >Product type *</label>
+                    </div>
+                    <div class="grid-item">
+                        <div class="dropdown-content">
+                            <select id="product-type" name="product-type" onclick="toggleSelect()">
+                                <option value="option1" disabled selected hidden="">Select product type</option>
+                                <option value="option2">Product $50</option>
+                                <option value="option3">Product $100</option>
+                                <option value="option4">Product $300</option>
+                            </select>
+                            <div class="arrow"></div>
+                        </div>
+
+
+                        <div class="error-message">Please select product type.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <label>Additional feature for $100</label>
+                    </div>
+                    <div class="grid-item left">
+                        <label class="switch">
+                            <input type="checkbox" id="additional-feature-100">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <label>Additional feature for $200</label>
+                    </div>
+                    <div class="grid-item left">
+                        <label class="switch">
+                            <input type="checkbox" id="additional-feature-200">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <textarea type="text" id="comment" name="comment" placeholder=" " class="input-field"></textarea>
+                <label for="comment" class="input-label">Type your comment</label>
+            </div>
+
+            <div class="form-group">
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <label>Total price</label>
+                    </div>
+                    <div class="grid-item">
+                        <label id="totalPrice" name="totalPrice">$0</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group centered-button">
+                <button id="sendFormButton" class="rounded-button" type="submit">Send form</button>
+            </div>
+        </form>
+        <span class="close" onclick="closeModal()">&times</span>
+    </div>
+</div>
+
+<script src="../../../../../../script.js"></script>
+</body>
+</html>

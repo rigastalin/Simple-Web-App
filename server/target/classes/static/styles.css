@@ -1,0 +1,471 @@
+body {
+    font-family: Inter, sans-serif;
+}
+
+h2 {
+    font-weight: normal;
+    letter-spacing: 2px;
+    font-size: 33px;
+}
+
+label {
+    letter-spacing: 0.08em;
+    color: #494848;
+}
+
+textarea {
+    font-family: Inter, sans-serif;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 40px; /* Увеличиваем внутренние отступы для большего размера окна */
+    width: 575px;
+    height: 750px;
+    max-height: 750px;
+    max-width: 575px;
+    /*overflow-y: auto;*/
+}
+
+.close {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    color: #333;
+    font-size: 70px;
+    font-weight: normal;
+    font-family: 'Raleway Dots', cursive;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+/* Дополнительные стили для кнопки */
+.centered-button .rounded-button {
+    margin-top: auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    width: auto;
+    min-width: 120px;
+    max-width: 200px; /* Добавляем максимальную ширину кнопки */
+    height: 40px;
+    font-family: 'Monsterrat', sans-serif;
+}
+
+.rounded-button {
+    padding: 10px 20px;
+}
+
+/*.centered-button {*/
+/*    position: relative;*/
+/*    bottom: 20px;*/
+/*    left: 50%;*/
+/*    transform: translateX(-50%);*/
+/*}*/
+
+
+.form-group {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+
+.input-container {
+    position: relative;
+}
+
+.input-field {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.input-label {
+    position: absolute;
+    margin-top: 5px;
+    top: 20px;
+    left: 20px;
+    pointer-events: none;
+    transition: 0.15s;
+    color: #aaa;
+}
+
+.input-field:focus ~ .input-label,
+.input-field:not(:placeholder-shown) ~ .input-label {
+    top: 7px;
+    left: 22px;
+    font-size: 12px;
+    color: #999;
+    letter-spacing: 0.2em;
+    padding-top: -1px;
+}
+
+
+
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 532px;
+    max-width: 532px;
+    height: 15px;
+    padding: 20px 20px;
+    margin-top: 7px;
+    border-radius: 5px;
+    color: #333;
+    border: 1px solid #ccc;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+}
+
+
+.form-group select {
+    padding: 15px 20px;
+    letter-spacing: 0.1em;
+}
+
+.form-group textarea {
+    margin-top: 7px;
+    padding-top: 20px;
+    height: 50px;
+    max-height: 60px;
+}
+
+::placeholder {
+    font-weight: normal;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border: 3px solid #C7DCF2;
+}
+
+.form-group input:focus + label,
+.form-group textarea:focus + label,
+.form-group select:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:not(:placeholder-shown) + label,
+.form-group select:not(:placeholder-shown) + label {
+    top: -15px;
+    left: 5px;
+    font-size: 12px;
+    color: #555;
+}
+
+.form-group input:focus::placeholder,
+.form-group textarea:focus::placeholder,
+.form-group select:focus::placeholder {
+    color: transparent;
+}
+
+.centered-button {
+    position: relative;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+.form-group.centered-button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+
+.form-group.centered-button .rounded-button {
+    background-color: #448AE0;
+    color: #ffffff;
+    height: 55px;
+    width: 175px;
+    border: 1px solid #4670B6;
+    border-radius: 5px;
+}
+
+.form-group.label-inline {
+    display: flex;
+    align-items: center;
+}
+
+.form-group.label-inline label {
+    margin-right: 10px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Разделение на две колонки с автоматической шириной */
+    align-items: center; /* Выравнивание элементов по центру вертикально */
+}
+
+.grid-container .grid-item:last-child {
+    justify-self: end; /* Выравнивание последнего элемента второй колонки по правому краю */
+}
+
+#product-type {
+    appearance: none; /* убирает стандартный внешний вид */
+    padding: 8px 30px 8px 12px; /* задайте желаемый внутренний отступ */ /* задайте желаемую рамку */
+    background-color: #fff; /* задайте желаемый фон */
+    color: #333; /* задайте желаемый цвет текста */
+    font-size: 14px;
+    width: 324px;
+    height: 43px;
+    font-family: 'Monsterrat', sans-serif;
+}
+
+#product-type:focus {
+    outline: none; /* убирает фокусовку при выборе */
+    border-color: #C7DCF2;
+}
+
+.dropdown-content {
+    position: relative;
+    display: inline-block;
+}
+
+.arrow {
+    position: absolute;
+    top: 27px;
+    right: 20px;
+    transform: translateY(-50%) rotate(180deg);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #ccc;
+}
+
+.open .arrow {
+    transform: translateY(-50%) rotate(0deg);
+}
+
+.grid-item .product-container {
+    width: 324px;
+}
+
+.grid-item label {
+    margin-right: 10px;
+}
+
+.grid-item .switch  {
+    margin-right: 0; /* Убираем лишний отступ слева */
+}
+
+
+/* Дополнительные стили для переключателя (toggle switch) */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 20px;
+    margin-left: auto;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    display: none;
+    border: 1px solid gray;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #CABDBD;
+    transition: .2s;
+    border: 1px solid #E8E3E3;
+    box-shadow: inset 0 0 2px gray;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 17px;
+    width: 16px;
+    left: 2px;
+    bottom: 1px;
+    background-color: #D5C9CB;
+    transition: .2s;
+}
+
+input:checked + .slider {
+    background-color: #4B9E42;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #4B9E42;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 20px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+/* Error */
+.error {
+    background-color: #F9EAEC;
+    color: red;
+}
+
+.form-group input.error,
+.form-group select.error {
+    border: 1px solid red;
+    background-color: #F9EAEC;
+}
+
+.error label,
+.error select,
+.error option{
+    color: red;
+}
+
+.error-message,
+.error-message-valid {
+    display: none;
+    color: red;
+    margin-top: 7px;
+    font-family: Inter, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+}
+
+
+
+
+/*.container {*/
+/*    width: 324px;*/
+/*    margin: 10px auto;*/
+/*    padding: 0;*/
+/*    font-family: 'Montserrat', sans-serif;*/
+/*    font-weight: normal;*/
+/*    color: #333;*/
+/*}*/
+
+/*.container > ul {*/
+/*    list-style: none;*/
+/*    padding: 0;*/
+/*    margin: 0 0 20px 0;*/
+/*}*/
+
+
+/*.dropdown a {*/
+/*    text-decoration: none;*/
+/*    top: 2px;*/
+/*}*/
+
+/*.dropdown [data-toggle="dropdown"] {*/
+/*    display: block;*/
+/*    position: relative;*/
+/*    border: 1px solid transparent;*/
+/*    padding: 10px 20px;*/
+/*    margin: 0;*/
+/*    vertical-align: middle;*/
+/*    border-radius: 5px;*/
+/*}*/
+
+/*.dropdown [data-toggle="dropdown"] {*/
+/*    border-color: #d3d3d3;*/
+/*    color: #333;*/
+/*}*/
+
+/*.dropdown [data-toggle="dropdown"]:focus {*/
+/*    border: 3px solid #C7DCF2;*/
+/*    border-bottom: 1px;*/
+/*    background: #ffffff;*/
+/*}*/
+
+/*.dropdown .icon-arrow {*/
+/*    position: absolute;*/
+/*    display: block;*/
+/*    font-size: 0.6em;*/
+/*    color: #333;*/
+/*    top: 14px;*/
+/*    right: 20px;*/
+/*}*/
+
+/*.dropdown .icon-arrow.open {*/
+/*    transform: rotate(53deg);*/
+/*    transition: transform 0.4s;*/
+/*}*/
+
+/*.dropdown .icon-arrow.close {*/
+/*    transform: rotate(233deg);*/
+/*    transition: transform 0.6s;*/
+/*}*/
+
+/*.dropdown .icon-arrow:before {*/
+/*    content: '\25BC';*/
+/*}*/
+
+/*.dropdown .dropdown-menu {*/
+/*    max-height: 0;*/
+/*    overflow: hidden;*/
+/*    list-style: none;*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*}*/
+
+/*.dropdown .dropdown-menu li {*/
+/*    padding: 0;*/
+/*}*/
+
+/*.dropdown .dropdown-menu li a {*/
+/*    display: block;*/
+/*    color: #333;*/
+/*    padding: 10px 20px;*/
+/*    border: 1px solid #ccc;*/
+/*}*/
+
+/*.dropdown .dropdown-menu li a:hover {*/
+/*    background: #EBFDFF;*/
+/*}*/
+
+/*.dropdown .show, .dropdown .hide {*/
+/*    transform-origin: 0;*/
+/*    top: 0;*/
+/*}*/
+
+/*.dropdown .show {*/
+/*    display: block;*/
+/*    max-height: 9999px;*/
+/*    transform: none;*/
+/*    animation: showAnimation 0.5s ease-in-out;*/
+/*    transition: max-height 1s ease-in-out;*/
+/*}*/
+
+/*.dropdown .hide {*/
+/*    max-height: 0;*/
+/*    transform: translateY(0);*/
+/*    animation: hideAnimation 0.4s ease-out;*/
+/*    transition: max-height 0.6s ease-out;*/
+/*}*/
