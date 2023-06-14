@@ -9,3 +9,4 @@ To start this project on your computer:
 1. Start MySQL server
 2. Change username and password for datasource in file application.properties (in resources folder)
 3. Lunch project in main function
+4. Open form in address http://localhost:8080
